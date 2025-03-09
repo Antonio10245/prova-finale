@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>prova vetrina</title>
+  <style>
+    body {
+      text-align: center;
+    }
+
+    .container {
+      position: relative;
+      display: inline-block;
+    }
+
+    .hotspot {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: rgba(255, 0, 0, 0.7); /* Rosso trasparente */
+      border-radius: 50%;
+      cursor: pointer;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 0.7; }
+      50% { transform: scale(1.2); opacity: 1; }
+      100% { transform: scale(1); opacity: 0.7; }
+    }
+
+    .popup {
+      display: none;
+      position: absolute;
+      background-color: white;
+      padding: 10px;
+      border: 1px solid black;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Posizioni degli hotspot */
+    #pallino1 { top: 25%; left: 21%; }
+    #pallino2 { top: 27%; left: 34%; }
+    #pallino3 { top: 33%; left: 46%; }
+    #pallino4 { top: 33%; left: 55%; }
+    #pallino5 { top: 28%; left: 68%; }
+    #pallino6 { top: 26%; left: 77%; }
+    #pallino7 { top: 78%; left: 25%; }
+    #pallino8 { top: 72%; left: 32%; }
+    #pallino9 { top: 82%; left: 38%; }
+    #pallino10 { top: 65%; left: 50%; }
+    #pallino11 { top: 82%; left: 62%; }
+    #pallino12 { top: 67%; left: 72%; }
+    #pallino13 { top: 84%; left: 80%; }
+
+  </style>
+</head>
+<body>
+
+  <h1>Vetrina prova</h1>
+
+  <div class="container">
+    <img src="vetrina.jpeg" alt="Vetrina prova" width="80%">
+    
+    <!-- Hotspot -->
+    <div class="hotspot" id="pallino1" onclick="mostraPopup(1)"></div>
+    <div class="hotspot" id="pallino2" onclick="mostraPopup(2)"></div>
+    <div class="hotspot" id="pallino3" onclick="mostraPopup(3)"></div>
+    <div class="hotspot" id="pallino4" onclick="mostraPopup(4)"></div>
+    <div class="hotspot" id="pallino5" onclick="mostraPopup(5)"></div>
+    <div class="hotspot" id="pallino6" onclick="mostraPopup(6)"></div>
+    <div class="hotspot" id="pallino7" onclick="mostraPopup(7)"></div>
+    <div class="hotspot" id="pallino8" onclick="mostraPopup(8)"></div>
+    <div class="hotspot" id="pallino9" onclick="mostraPopup(9)"></div>
+    <div class="hotspot" id="pallino10" onclick="mostraPopup(10)"></div>
+    <div class="hotspot" id="pallino11" onclick="mostraPopup(11)"></div>
+    <div class="hotspot" id="pallino12" onclick="mostraPopup(12)"></div>
+    <div class="hotspot" id="pallino13" onclick="mostraPopup(13)"></div>
+  </div>
+
+  <!-- Popup per le descrizioni -->
+  <div class="popup" id="popup1">Kantharos <button onclick="chiudiPopup(1)">Chiudi</button></div>
+  <div class="popup" id="popup2">Kantharos <button onclick="chiudiPopup(2)">Chiudi</button></div>
+  <div class="popup" id="popup3">Descrizione Oggetto 3 <button onclick="chiudiPopup(3)">Chiudi</button></div>
+  <div class="popup" id="popup4">Descrizione Oggetto 4 <button onclick="chiudiPopup(4)">Chiudi</button></div>
+  <div class="popup" id="popup5">Hydriae <button onclick="chiudiPopup(5)">Chiudi</button></div>
+  <div class="popup" id="popup6">Cratere a campana <button onclick="chiudiPopup(6)">Chiudi</button></div>
+  <div class="popup" id="popup7">Skyphos <button onclick="chiudiPopup(7)">Chiudi</button></div>
+  <div class="popup" id="popup8">Skyphos <button onclick="chiudiPopup(8)">Chiudi</button></div>
+  <div class="popup" id="popup9">Piattp <button onclick="chiudiPopup(9)">Chiudi</button></div>
+  <div class="popup" id="popup10">Cratere a campana <button onclick="chiudiPopup(10)">Chiudi</button></div>
+  <div class="popup" id="popup11">Descrizione Oggetto 11 <button onclick="chiudiPopup(11)">Chiudi</button></div>
+  <div class="popup" id="popup12">Cratere a campana <button onclick="chiudiPopup(12)">Chiudi</button></div>
+<div class="popup" id="popup13">Descrizione Oggetto 13 <button onclick="chiudiPopup(13)">Chiudi</button></div>
+
+  <script>
+    function mostraPopup(num) {
+      let popup = document.getElementById('popup' + num);
+      popup.style.display = 'block';
+
+      // Posiziona il popup accanto al pallino cliccato
+      let pallino = document.getElementById('pallino' + num);
+      popup.style.top = pallino.offsetTop + 30 + "px";
+      popup.style.left = pallino.offsetLeft + 30 + "px";
+    }
+
+    function chiudiPopup(num) {
+      document.getElementById('popup' + num).style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>
